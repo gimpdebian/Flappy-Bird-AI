@@ -40,14 +40,14 @@ var isChristmas = true;
 
 function preload() {
   if (isChristmas) {
-    birdSprite = loadImage("images/christmasBerd.png");
+    birdSprite = loadImage("christmasBerd.png");
   } else {
-    birdSprite = loadImage("images/fatBird.png");
+    birdSprite = loadImage("fatBird.png");
   }
-  topPipeSprite = loadImage("images/full pipe top.png");
-  bottomPipeSprite = loadImage("images/full pipe bottom.png");
-  backgroundSprite = loadImage("images/background.png");
-  groundSprite = loadImage("images/groundPiece.png");
+  topPipeSprite = loadImage("full pipe top.png");
+  bottomPipeSprite = loadImage("full pipe bottom.png");
+  backgroundSprite = loadImage("background.png");
+  groundSprite = loadImage("groundPiece.png");
 
 }
 
@@ -55,9 +55,9 @@ function setup() {
   window.canvas = createCanvas(600, 800);
 
   player = new Player();
-  // pipes = new PipePair(true);
-  // pipes2 = new PipePair(false, pipes);
-  // pipes2.setX(1.5 * canvas.width + pipes2.topPipe.width / 2);
+   pipes = new PipePair(true);
+   pipes2 = new PipePair(false, pipes);
+   pipes2.setX(1.5 * canvas.width + pipes2.topPipe.width / 2);
   ground = new Ground();
 
   pauseBecauseDead = false;
@@ -67,7 +67,7 @@ function setup() {
 }
 
 function draw() {
-  // background(135, 206, 250);
+   background(135, 206, 250);
   drawToScreen();
   if (showBestEachGen) { //show the best of each gen
     showBestPlayersForEachGeneration();
@@ -83,7 +83,7 @@ function draw() {
       population.naturalSelection();
     }
   }
-  // writeInfo();
+   writeInfo();
 }
 //-----------------------------------------------------------------------------------
 function showBestPlayersForEachGeneration() {
@@ -131,8 +131,8 @@ function drawToScreen() {
   if (!showNothing) {
     //pretty stuff
     image(backgroundSprite, 0, 0, canvas.width, canvas.height);
-    // showAll();
-    // updateAll();
+     showAll();
+     updateAll();
     drawBrain();
 
 
@@ -202,7 +202,7 @@ function writeInfo() {
 function keyPressed() {
   switch (key) {
     case ' ':
-      //toggle showBest
+      toggle showBest
       if (humanPlaying) {
         humanPlayer.flap();
       } else {
