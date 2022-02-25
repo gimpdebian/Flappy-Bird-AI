@@ -49,7 +49,7 @@ class Player {
       this.fallRotation += PI / 8.0;
       this.fallRotation = constrain(this.fallRotation, -PI / 6, PI / 2);
       rotate(this.fallRotation);
-      // rotate(map(this.velY, 10, 25, -PI / 6, PI / 2));
+       rotate(map(this.velY, 10, 25, -PI / 6, PI / 2));
     } else {
       rotate(PI / 2);
     }
@@ -99,7 +99,7 @@ class Player {
     if (this.isOnGround) {
       this.deadOnGroundCount++;
       if (this.deadOnGroundCount > 50) {
-        // setup();
+         setup();
       }
     }
     if (!dieOff) {
@@ -134,7 +134,7 @@ class Player {
 
   flap() {
     if (!this.dead && !this.isOnGround) {
-      // this.velY = -35;
+       this.velY = -35;
       this.velY = -25;
     }
   }
@@ -170,12 +170,12 @@ class Player {
       if (this.decision[0] > 0.6) {
         this.flap();
       }
-      // for (var i = 0; i < this.decision.length; i++) {
-      //   if (this.decision[i] > max) {
-      //     max = this.decision[i];
-      //     maxIndex = i;
-      //   }
-      // }
+       for (var i = 0; i < this.decision.length; i++) {
+         if (this.decision[i] > max) {
+           max = this.decision[i];
+           maxIndex = i;
+         }
+       }
 
 
 
