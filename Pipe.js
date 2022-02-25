@@ -15,8 +15,8 @@ class Pipe {
   }
 
   show() {
-    // fill(0, 204, 0);
-    // rect(this.x, this.topY, this.width, this.height);
+     fill(0, 204, 0);
+     rect(this.x, this.topY, this.width, this.height);
 
     if (this.isTop) {
       image(topPipeSprite, this.x, this.topY + this.height - 800);
